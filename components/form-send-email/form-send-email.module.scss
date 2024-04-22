@@ -1,0 +1,119 @@
+@import '../../scss/functions.scss';
+
+.form {
+  min-width: 140px;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10%;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: #32325d40 0px 13px 27px -5px, #0000004d 0px 8px 16px -8px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__link {
+    width: 20%;
+    margin: 5% auto;
+    padding: 4.5% 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 8px #cbced1, -5px -5px 8px #ffffff;
+    transition: 0.5s;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: calcFluidFontSize(16, 32, 150, 1900);
+    color: #e75cf9;
+    text-align: center;
+    margin-bottom: 3%;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: none;
+    height: 52px;
+    background: #fff;
+    color: #000;
+    border-radius: 2px;
+    border: 1px solid #0000001a;
+    font-size: calcFluidFontSize(12, 16, 150, 1400);
+  }
+
+  &__input::placeholder {
+    color: #808080;
+  }
+
+  &__text_area {
+    min-height: 100px;
+  }
+
+  &__submit {
+    max-width: 90%;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #0000001a;
+    border-radius: 0.25rem;
+    box-shadow: #00000005 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #808080;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: calcFluidFontSize(12, 16, 150, 1400);
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+
+    &:hover,
+    &:focus {
+      border-color: #00000026;
+      box-shadow: #0000001a 0 4px 12px;
+      color: #000000a6;
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      background-color: #f0f0f1;
+      border-color: #00000026;
+      box-shadow: #0000000f 0 2px 4px;
+      color: #000000a6;
+      transform: translateY(0);
+    }
+  }
+}

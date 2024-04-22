@@ -1,0 +1,126 @@
+@import '../../scss/variables.scss';
+
+.hr {
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: relative;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+    bottom: 50%;
+    left: 0;
+  }
+
+  &:before {
+    background: linear-gradient(
+      90deg,
+      $hr-bg 0%,
+      $hr-bg 50%,
+      transparent 50%,
+      transparent 100%
+    );
+    background-size: $hr-barsize;
+    background-position: center;
+    z-index: 1;
+  }
+
+  &:after {
+    transition: opacity 0.3s ease, animation 0.3s ease;
+
+    background: linear-gradient(
+      to right,
+      #62efab 5%,
+      #f2ea7d 15%,
+      #f2ea7d 25%,
+      #ff8797 35%,
+      #ff8797 45%,
+      #e1a4f4 55%,
+      #e1a4f4 65%,
+      #82fff4 75%,
+      #82fff4 85%,
+      #62efab 95%
+    );
+
+    background-size: 200%;
+    background-position: 0%;
+    animation: bar 15s linear infinite;
+  }
+
+  @keyframes bar {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+}
+
+.hr.anim {
+  &:before {
+    background: linear-gradient(
+      90deg,
+      $hr-bg 0%,
+      $hr-bg 5%,
+      transparent 5%,
+      transparent 10%,
+      $hr-bg 10%,
+      $hr-bg 15%,
+      transparent 15%,
+      transparent 20%,
+      $hr-bg 20%,
+      $hr-bg 25%,
+      transparent 25%,
+      transparent 30%,
+      $hr-bg 30%,
+      $hr-bg 35%,
+      transparent 35%,
+      transparent 40%,
+      $hr-bg 40%,
+      $hr-bg 45%,
+      transparent 45%,
+      transparent 50%,
+      $hr-bg 50%,
+      $hr-bg 55%,
+      transparent 55%,
+      transparent 60%,
+      $hr-bg 60%,
+      $hr-bg 65%,
+      transparent 65%,
+      transparent 70%,
+      $hr-bg 70%,
+      $hr-bg 75%,
+      transparent 75%,
+      transparent 80%,
+      $hr-bg 80%,
+      $hr-bg 85%,
+      transparent 85%,
+      transparent 90%,
+      $hr-bg 90%,
+      $hr-bg 95%,
+      transparent 95%,
+      transparent 100%
+    );
+
+    background-size: $hr-barsize * 10;
+    background-position: center;
+    z-index: 1;
+
+    animation: bar 120s linear infinite;
+  }
+
+  &:hover {
+    &:before {
+      animation-duration: 20s;
+    }
+    &:after {
+      animation-duration: 2s;
+    }
+  }
+}

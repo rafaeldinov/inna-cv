@@ -1,0 +1,14 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/functions.scss';
+
+.text_wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: calcFluidFontSize(18, 26, 480, 1900);
+
+  @include correct-text-wrap;
+  width: fit-content;
+}

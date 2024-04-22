@@ -1,0 +1,74 @@
+.add_case {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  order: 1;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.add_items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 3dvh;
+  border-radius: 5px;
+
+  &__item {
+    overflow-y: hidden;
+  }
+}
+
+.items_preview {
+  margin-left: 10px;
+}
+
+.add_item_button {
+  width: 20%;
+  font-size: 18px;
+  border-radius: 5px;
+  font-size: calcFluidFontSize(14, 40, 240, 1400);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #8aa3b9;
+  }
+
+  @media (max-width: 480px) {
+    width: 60%;
+  }
+}
+
+.submit_button {
+  display: block;
+  padding: 5px;
+  font-size: 22px;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #748798;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.success_text {
+  color: #1b1d1b;
+  font-size: 40px;
+  background-color: #20ba20;
+}

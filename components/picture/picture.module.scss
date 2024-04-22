@@ -1,0 +1,21 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/functions.scss';
+
+.picture {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .no_image {
+    max-width: 80%;
+    max-height: 350px;
+    object-fit: cover;
+  }
+}

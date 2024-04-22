@@ -1,0 +1,69 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/functions.scss';
+
+.banner {
+  display: flex;
+  width: 100%;
+  z-index: 1;
+
+  &__wrapper {
+    position: relative;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  &__video {
+    width: 100%;
+    height: auto;
+
+    &_play {
+      display: block;
+      width: calcFluidFontSize(20, 50, 480, 1900);
+      height: calcFluidFontSize(20, 50, 480, 1900);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+
+  &__header {
+    font-size: calcFluidFontSize(18, 28, 480, 1400);
+    @include correct-text-wrap;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: inherit;
+  }
+
+  &__text {
+    font-size: calcFluidFontSize(16, 25, 480, 1400);
+    @include correct-text-wrap;
+    margin-bottom: 10px;
+    color: #ff00bd;
+
+    &_big {
+      font-size: calcFluidFontSize(32, 60, 480, 1400);
+      @include correct-text-wrap;
+      margin-bottom: 15px;
+      font-family: var(--seymour-font);
+      font-style: italic;
+      font-weight: 600;
+      color: inherit;
+      word-wrap: normal;
+    }
+  }
+
+  &__logo {
+    display: none;
+    margin-bottom: 15px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+@import '../../scss/functions.scss';
+
+.contacts {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__main {
+    padding: 2%;
+  }
+}
+
+.socials_email {
+  width: calcFluidFontSize(150, 300, 150, 1900);
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 5%;
+
+  @media (max-width: 240px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.socials {
+  max-width: 30%;
+  height: auto;
+}
+
+.email {
+  display: flex;
+  font-size: calcFluidFontSize(12, 20, 240, 1200);
+  align-self: center;
+  text-align: center;
+}

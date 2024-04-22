@@ -1,0 +1,55 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+@import '../../../scss/functions.scss';
+
+.case_error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.case {
+  height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 5% 0 5% 0;
+
+  &__wrapper {
+    max-width: 1200px;
+    display: flex;
+    gap: calcFluidFontSize(20, 45, 480, 1200);
+    flex-direction: column;
+    margin: 5% auto 0 auto;
+  }
+
+  &__header {
+    display: inline-flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: calcFluidFontSize(24, 45, 480, 1900);
+    @include correct-text-wrap;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    font-size: calcFluidFontSize(18, 30, 480, 1900);
+    @include correct-text-wrap;
+  }
+}
+
+.link__back {
+  margin-left: 5%;
+  color: $link-color;
+  font-size: calcFluidFontSize(18, 24, 480, 1200);
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../scss/functions.scss';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  z-index: 5;
+
+  @media (max-width: 480px) {
+    margin: 20px 20px 0 auto;
+  }
+
+  &__skeleton {
+    width: calcFluidFontSize(120, 200, 150, 1900);
+    height: calcFluidFontSize(20, 35, 150, 1900);
+
+    animation: skeleton-loading 1s linear infinite alternate;
+
+    @keyframes skeleton-loading {
+      0% {
+        background-color: hsl(200, 20%, 80%);
+      }
+      100% {
+        background-color: hsl(200, 20%, 95%);
+      }
+    }
+  }
+}
+
+.pagination__item button {
+  display: flex;
+  min-width: calcFluidFontSize(20, 35, 150, 1900);
+  max-height: calcFluidFontSize(20, 35, 150, 1900);
+  padding: 0;
+  font-size: calcFluidFontSize(10, 16, 150, 1900);
+}
+
+.pagination__item span {
+  width: 0;
+}

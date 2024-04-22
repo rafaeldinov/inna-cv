@@ -1,0 +1,30 @@
+.all_images {
+  max-width: 800px;
+  max-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f0f8ff;
+  color: #000000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.image_wrapper {
+  height: 200px;
+}
+
+.image {
+  width: 100px;
+  height: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 0px;
+}

@@ -1,0 +1,19 @@
+@import '../scss/functions.scss';
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: calcFluidFontSize(16, 50, 240, 1400);
+  padding: 20px;
+
+  &__text {
+    font-size: calcFluidFontSize(16, 40, 240, 1400);
+  }
+
+  &__link {
+    font-size: calcFluidFontSize(16, 30, 240, 1400);
+  }
+}

@@ -1,0 +1,12 @@
+@mixin correct-text-wrap($lineCountChrome: unset) {
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  // chrome
+  -webkit-line-clamp: $lineCountChrome;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: fit-content;
+}

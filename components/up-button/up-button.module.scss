@@ -1,0 +1,52 @@
+.up {
+  background-image: url('../../public/images/icons/scroll-up.png');
+  background-size: 100% 100%;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 208, 0, 0.4);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+  background-color: #bfede9;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 20px;
+  z-index: 9999;
+  font-size: 25px;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.9;
+
+  &::before {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    content: '';
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    filter: blur(5px);
+    box-shadow: 0 0 2px 3px #ffffffb6, 0 0 3px 4px rgb(255, 200, 0),
+      0 0 2px 3px rgba(0, 255, 255, 0.4);
+    z-index: -1;
+    display: block;
+    transform: rotate(-90deg);
+    animation: spin-back 6s infinite linear;
+    transform-origin: 16px 16px;
+    opacity: 0.9;
+  }
+
+  @keyframes spin-back {
+    0% {
+      transform: rotate(-360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  &:hover {
+    background-color: #7feee5;
+  }
+}

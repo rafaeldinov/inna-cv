@@ -1,0 +1,10 @@
+.socials {
+  display: flex;
+  gap: 5%;
+
+  &__icon {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
