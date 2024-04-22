@@ -1,5 +1,4 @@
 import { initEdgeStore } from '@edgestore/server';
-import { createEdgeStoreNextHandler } from '@edgestore/server/adapters/next/app';
 import { z } from 'zod';
 
 const es = initEdgeStore.create();
@@ -13,16 +12,12 @@ export const edgeStoreRouter = es.router({
       })
     )
     .path(({ ctx, input }) => [{ category: input.category }])
-    .beforeUpload(({ ctx, input, fileInfo }) => {
-      return true; // allow upload
+    .beforeUpload(() => {
+      return true;
     })
-    .beforeDelete(({ ctx, fileInfo }) => {
-      return true; // allow delete
+    .beforeDelete(() => {
+      return true;
     }),
-});
-
-const handler = createEdgeStoreNextHandler({
-  router: edgeStoreRouter,
 });
 
 export type EdgeStoreRouter = typeof edgeStoreRouter;
