@@ -9,6 +9,12 @@ import NextAuth from 'next-auth';
 // }
 
 declare module '@auth/core/types' {
+  interface User {
+    id: string;
+    email: string;
+    name: string;
+  }
+
   interface Session extends DefaultSession {
     user: {
       id: string;

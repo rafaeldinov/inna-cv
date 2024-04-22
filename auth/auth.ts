@@ -1,36 +1,53 @@
 import Credentials from 'next-auth/providers/credentials';
-import NextAuth from 'next-auth';
-import { authConfig } from './auth.config';
+import NextAuth, { User } from 'next-auth';
 
 export const {
   auth,
   signIn,
   signOut,
-  unstable_update,
+  update,
   handlers: { GET, POST },
 } = NextAuth({
-  ...authConfig,
   providers: [
     Credentials({
-      credentials: {
-        login: { label: 'text', type: 'text', required: true },
-        password: { label: 'password', type: 'password', required: true },
-      },
       async authorize(credentials) {
-        const text = credentials?.login;
+        const login = credentials?.login;
         const password = credentials?.password;
 
         if (
-          text === process.env.ADMIN_LOGIN &&
+          login === process.env.ADMIN_LOGIN &&
           password === process.env.ADMIN_PASSWORD
         ) {
           return {
+            id: 'dsfsdf',
             email: 'info@innadinova.com',
             name: 'Inna',
-          };
+          } as User;
         }
         return null;
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user, trigger, session }) {
+      if (trigger === 'update' && session) {
+        return { ...token, ...session?.user };
+      }
+
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user.id = token.id;
+      session.user.email = token.email;
+      session.user.name = token.name;
+      return session;
+    },
+  },
+  session: {
+    strategy: 'jwt',
+    maxAge: 24 * 60 * 60 * 7, // 7 days
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: { signIn: '/' },
+  useSecureCookies: true,
 });
