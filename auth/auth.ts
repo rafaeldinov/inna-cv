@@ -48,5 +48,5 @@ export const {
   trustHost: true,
   secret: process.env.NEXTAUTH_SECRET,
   pages: { signIn: '/' },
-  // useSecureCookies: true,
+  useSecureCookies: true,
 });
