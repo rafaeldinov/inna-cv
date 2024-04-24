@@ -10,14 +10,12 @@ import NextAuth from 'next-auth';
 
 declare module '@auth/core/types' {
   interface User {
-    id: string;
     email: string;
     name: string;
   }
 
   interface Session extends DefaultSession {
     user: {
-      id: string;
       email: string;
       name: string;
     };
@@ -27,7 +25,6 @@ declare module '@auth/core/types' {
 
 declare module '@auth/core/jwt' {
   interface JWT extends DefaultJWT {
-    id: string;
     email: string;
     name: string;
   }

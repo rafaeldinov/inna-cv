@@ -47,7 +47,4 @@ export const fileTypes = [
   'image/x-icon',
 ];
 
-export const POSTS_PER_PAGE = 6;
-
-export const GOOGLE_IMAGE_SRC_PREFIX = 'https://drive.google.com/uc?id=';
-export const YOUTUBE_VIDEO_SRC_PREFIX = 'https://www.youtube.com/embed/';
+export const POSTS_PER_PAGE = 10;

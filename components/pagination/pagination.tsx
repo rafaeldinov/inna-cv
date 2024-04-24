@@ -11,6 +11,7 @@ export default function PaginationRounded() {
   const setCurrentPage = usePostsStore((state) => state.setCurrentPage);
   const currentPage = usePostsStore((state) => state.currentPage);
   const pagesCount = usePostsStore((state) => state.pagesCount);
+  const isLoading = usePostsStore((state) => state.isLoading);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -38,6 +39,7 @@ export default function PaginationRounded() {
             page={currentPage}
             variant='outlined'
             shape='rounded'
+            disabled={isLoading}
           />
         </Stack>
       )}

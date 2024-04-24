@@ -19,7 +19,6 @@ export const {
           password === process.env.ADMIN_PASSWORD
         ) {
           return {
-            id: 'dsfsdf',
             email: 'info@innadinova.com',
             name: 'Inna',
           } as User;
@@ -37,7 +36,6 @@ export const {
       return { ...token, ...user };
     },
     async session({ session, token }) {
-      session.user.id = token.id;
       session.user.email = token.email;
       session.user.name = token.name;
       return session;
@@ -45,9 +43,9 @@ export const {
   },
   session: {
     strategy: 'jwt',
-    maxAge: 24 * 60 * 60 * 7, // 7 days
+    maxAge: 24 * 60 * 60 * 7,
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: { signIn: '/' },
-  useSecureCookies: true,
+  // useSecureCookies: true,
 });

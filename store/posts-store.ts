@@ -7,6 +7,7 @@ import { create } from 'zustand';
 const initialFilters = Object.values(Area);
 
 interface PostsStore {
+  isLoading: boolean;
   pagesCount: undefined | number;
   currentPage: number;
   filters: string[];
@@ -18,6 +19,7 @@ interface PostsStore {
 }
 
 export const usePostsStore = create<PostsStore>((set, get) => ({
+  isLoading: false,
   pagesCount: undefined,
   currentPage: 1,
   filters: initialFilters,
@@ -31,7 +33,9 @@ export const usePostsStore = create<PostsStore>((set, get) => ({
     const currentFilters = filters.length === 0 ? initialFilters : filters;
     const page = get().currentPage;
     set(() => ({ filters: currentFilters }));
+    set(() => ({ isLoading: true }));
     const { posts, count } = await getPosts(currentFilters, page);
+    set(() => ({ isLoading: false }));
     set(() => ({ currentPage: 1 }));
     const pagesCount = Math.ceil(count / POSTS_PER_PAGE);
     set(() => ({ pagesCount }));
@@ -40,7 +44,9 @@ export const usePostsStore = create<PostsStore>((set, get) => ({
   setCurrentPage: async (page: number = 1) => {
     const filters = get().filters;
     set(() => ({ currentPage: page }));
+    set(() => ({ isLoading: true }));
     const { posts, count } = await getPosts(filters, page);
+    set(() => ({ isLoading: false }));
     const pagesCount = Math.ceil(count / POSTS_PER_PAGE);
     set(() => ({ pagesCount }));
     set(() => ({ posts }));
