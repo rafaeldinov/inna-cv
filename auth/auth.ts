@@ -45,6 +45,7 @@ export const {
     strategy: 'jwt',
     maxAge: 24 * 60 * 60 * 7,
   },
+  trustHost: true,
   secret: process.env.NEXTAUTH_SECRET,
   pages: { signIn: '/' },
   // useSecureCookies: true,
