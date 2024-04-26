@@ -104,15 +104,16 @@ export default function FormAddUpdateCase({ posts }: Props) {
       return toast.error('preview image url not exists');
     }
 
-    const isItemsUrlValid = formData.items.some((item) => {
-      if (item.src) {
-        return isValidURL(item.src);
-      }
-    });
+    if (formData.items.length > 0) {
+      const isItemsUrlValid = formData.items.some((item) =>
+        item && item.src ? isValidURL(item.src) : item.type === 'text'
+      );
 
-    if (!isItemsUrlValid) {
-      return toast.error('some of items url not exists');
+      if (!isItemsUrlValid) {
+        return toast.error('some of items url not exists');
+      }
     }
+
     setIsLoading(true);
     await addPost(formData);
     setIsLoading(false);
