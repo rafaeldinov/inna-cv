@@ -4,7 +4,6 @@ const path = require('path');
 
 const nextConfig = {
   images: {
-    // domains: ['files.edgestore.dev'],
     remotePatterns: [
       {
         protocol: 'https',
