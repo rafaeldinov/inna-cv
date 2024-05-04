@@ -22,10 +22,9 @@ export default async function About() {
             <Image
               className={styles.about__image}
               src='https://files.edgestore.dev/vh00l46smm3hlf5y/publicFiles/_public/admin/120a122e-e8b8-4ba6-93fb-bdefd085fa66.jpg'
-              width={1821}
-              height={1766}
+              width={910}
+              height={883}
               alt='Inna image'
-              sizes='100%'
               priority
             />
           </div>
@@ -51,7 +50,6 @@ export default async function About() {
                 alt='agency image'
                 priority
                 fill
-                sizes='100%'
               />
             </li>
             <li className={styles.about__agencies_image_wrapper}>
@@ -61,7 +59,6 @@ export default async function About() {
                 alt='agency image'
                 priority
                 fill
-                sizes='100%'
               />
             </li>
             <li className={styles.about__agencies_image_wrapper}>
@@ -71,7 +68,6 @@ export default async function About() {
                 alt='agency image'
                 priority
                 fill
-                sizes='100%'
               />
             </li>
             <li className={styles.about__agencies_image_wrapper}>
@@ -81,7 +77,6 @@ export default async function About() {
                 alt='agency image'
                 priority
                 fill
-                sizes='100%'
               />
             </li>
             <li className={styles.about__agencies_image_wrapper}>
@@ -91,7 +86,6 @@ export default async function About() {
                 alt='agency image'
                 priority
                 fill
-                sizes='100%'
               />
             </li>
           </ul>
@@ -109,7 +103,6 @@ export default async function About() {
                   alt='award image'
                   priority
                   fill
-                  sizes='100%'
                 />
               </div>
               <div className={styles.about__awards_list}>
@@ -135,7 +128,6 @@ export default async function About() {
                   alt='award image'
                   priority
                   fill
-                  sizes='100%'
                 />
               </div>
               <div className={styles.about__awards_list}>
@@ -154,7 +146,6 @@ export default async function About() {
               priority
               width={5000}
               height={8647}
-              sizes='100%'
             />
           </div>
           <div className={styles.about__image_wrapper}>
@@ -164,7 +155,6 @@ export default async function About() {
               alt='Inna image'
               width={5000}
               height={8647}
-              sizes='100%'
               loading='lazy'
             />
           </div>

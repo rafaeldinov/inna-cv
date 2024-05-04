@@ -144,10 +144,10 @@
 
 .burger.burger__active::before {
   transform: rotate(45deg);
-  top: 44%;
+  top: 43%;
 }
 
 .burger.burger__active::after {
   transform: rotate(-45deg);
-  bottom: 44%;
+  bottom: 43%;
 }

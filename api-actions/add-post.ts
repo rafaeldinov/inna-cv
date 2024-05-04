@@ -7,6 +7,7 @@ import PostModel from '@/db/models/post.model';
 export default async function addPost(post: PostType) {
   await getDatabase();
 
+  // await client.db('inna-cv').collection('posts')
   const { images, ...postWithoutImages } = post;
   const response = await PostModel.findOneAndUpdate(
     {

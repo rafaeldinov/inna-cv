@@ -9,8 +9,6 @@ import {
 import UpButton from '../components/up-button/up-button';
 import Header from '@/components/header/header';
 import SessionProvider from '@/components/session-provider/session-provider';
-import PasswordPrompt from '@/components/password-prompt/password-prompt';
-import ComingSoon from '@/components/coming-soon/coming-soon';
 import { auth } from '@/auth/auth';
 import { EdgeStoreProvider } from '@/db/edgestore-provider';
 

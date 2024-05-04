@@ -24,11 +24,11 @@ export default function CardItem({ item }: { item: PostType }) {
             <Image
               className={styles.card__image}
               src={item.previewImageSrc}
-              quality={100}
+              // quality={100}
               alt='case preview'
               height={500}
               width={350}
-              sizes='100%'
+              // sizes='100%'
               priority
             />
           </div>

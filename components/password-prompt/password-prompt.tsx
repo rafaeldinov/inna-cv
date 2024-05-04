@@ -32,25 +32,31 @@ export default function PasswordPrompt() {
   return (
     <div>
       <form className={styles.password_prompt} autoComplete='off'>
-        <label>
-          Login
-          <input
-            name='login'
-            type='text'
-            value={login}
-            onChange={(evt) => setLogin(evt.target.value.replace(/ /g, ''))}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            name='password'
-            type='password'
-            value={password}
-            onChange={(evt) => setPassword(evt.target.value.replace(/ /g, ''))}
-          />
-        </label>
-        <button type='button' onClick={handleSigninClick}>
+        <label htmlFor='login'>Login</label>
+        <input
+          className={styles.password_prompt__input}
+          name='login'
+          type='text'
+          id='login'
+          value={login}
+          onChange={(evt) => setLogin(evt.target.value.replace(/ /g, ''))}
+        />
+
+        <label htmlFor='password'>Password</label>
+        <input
+          className={styles.password_prompt__input}
+          name='password'
+          type='password'
+          id='password'
+          value={password}
+          onChange={(evt) => setPassword(evt.target.value.replace(/ /g, ''))}
+        />
+
+        <button
+          className={styles.password_prompt__input}
+          type='button'
+          onClick={handleSigninClick}
+        >
           signin
         </button>
       </form>

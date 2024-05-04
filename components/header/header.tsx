@@ -99,7 +99,7 @@ export default function Header() {
             {session && (
               <button
                 onClick={() => {
-                  signOut();
+                  signOut({ callbackUrl: AppRoute.Root, redirect: true });
                 }}
               >
                 signout

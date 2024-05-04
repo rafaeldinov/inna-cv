@@ -1,15 +1,17 @@
-import Credentials from 'next-auth/providers/credentials';
 import NextAuth, { User } from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { AppRoute } from '@/app/const';
 
 export const {
   auth,
   signIn,
   signOut,
-  update,
+  unstable_update,
   handlers: { GET, POST },
 } = NextAuth({
   providers: [
-    Credentials({
+    CredentialsProvider({
+      name: 'Credentials',
       async authorize(credentials) {
         const login = credentials?.login;
         const password = credentials?.password;
@@ -19,8 +21,8 @@ export const {
           password === process.env.ADMIN_PASSWORD
         ) {
           return {
-            email: 'info@innadinova.com',
-            name: 'Inna',
+            email: process.env.USER_EMAIL,
+            name: process.env.Inna,
           } as User;
         }
         return null;
@@ -45,8 +47,6 @@ export const {
     strategy: 'jwt',
     maxAge: 24 * 60 * 60 * 7,
   },
-  trustHost: true,
   secret: process.env.NEXTAUTH_SECRET,
-  pages: { signIn: '/' },
-  // useSecureCookies: true,
+  pages: { signIn: AppRoute.Root },
 });
