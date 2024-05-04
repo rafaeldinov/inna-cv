@@ -22,7 +22,7 @@ export const {
         ) {
           return {
             email: process.env.USER_EMAIL,
-            name: process.env.Inna,
+            name: process.env.USER_NAME,
           } as User;
         }
         return null;
