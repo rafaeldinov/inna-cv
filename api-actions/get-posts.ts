@@ -13,7 +13,7 @@ export default async function getPosts(
   const postsCount = await PostModel.countDocuments({ area: { $in: filters } });
 
   const posts = await PostModel.find({ area: { $in: filters } })
-    .skip((currentPage - 1) * POSTS_PER_PAGE)
+    .skip(currentPage * POSTS_PER_PAGE - POSTS_PER_PAGE)
     .limit(POSTS_PER_PAGE)
     .sort({ createdAt: 'desc' })
     .then((docs) => JSON.parse(JSON.stringify(docs)));

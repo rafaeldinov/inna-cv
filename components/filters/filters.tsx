@@ -14,6 +14,7 @@ export default function Filters() {
   const [isHide, setIsHide] = useState(true);
 
   const setFilters = usePostsStore((state) => state.setFilters);
+  const setCurrentPage = usePostsStore((state) => state.setCurrentPage);
   const isLoading = usePostsStore((state) => state.isLoading);
 
   const handleOpenCloseFiltersClick = () => setIsHide(!isHide);
@@ -24,6 +25,7 @@ export default function Filters() {
 
     if (isChecked) {
       filtersRef.current.push(filter);
+
       return setFilters(filtersRef.current);
     }
     const modifiedFilters = filtersRef.current.filter(
@@ -57,7 +59,12 @@ export default function Filters() {
               <FormControlLabel
                 className={styles.filter}
                 key={area + index}
-                control={<Checkbox onChange={handleFilterChange} disabled={isLoading}/>}
+                control={
+                  <Checkbox
+                    onChange={handleFilterChange}
+                    disabled={isLoading}
+                  />
+                }
                 label={area}
                 value={area}
               />
