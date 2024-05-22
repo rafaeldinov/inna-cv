@@ -47,4 +47,4 @@ export const fileTypes = [
   'image/x-icon',
 ];
 
-export const POSTS_PER_PAGE = 3;
+export const POSTS_PER_PAGE = 8;

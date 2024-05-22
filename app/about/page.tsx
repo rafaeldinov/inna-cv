@@ -8,6 +8,7 @@ import twiga from '../../public/images/agencies/twiga.svg';
 import publicis from '../../public/images/agencies/publicis.png';
 import effie from '../../public/images/awards/effie-awards.svg';
 import wowDone from '../../public/images/awards/wow-done-2018.svg';
+import bioImage from '../../public/images/bio-image.jpg';
 
 export const metadata: Metadata = {
   title: 'About me',
@@ -21,7 +22,7 @@ export default async function About() {
           <div className={styles.about__image_wrapper}>
             <Image
               className={styles.about__image}
-              src='https://files.edgestore.dev/vh00l46smm3hlf5y/publicFiles/_public/admin/120a122e-e8b8-4ba6-93fb-bdefd085fa66.jpg'
+              src={bioImage.src}
               width={910}
               height={883}
               alt='Inna image'
